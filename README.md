@@ -8,8 +8,8 @@ Getting Started
 # Install dependencies
 npm install
 
-# Run it
-node index
+# Test it
+node test.js
 
 
 ```
