@@ -5,8 +5,8 @@
 // After successfully logging in, return steamguard code to ""
 var config = {};
 
-config.steam_name = "d2gb0001";
-config.steam_user = "d2gb0001";
+config.steam_name = "d2gb0002";
+config.steam_user = "d2gb0002";
 config.steam_pass = "passwordrandom123";
 config.steam_guard_code = "steamGuardCodeIfApplicable";
 
