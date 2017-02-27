@@ -1,6 +1,6 @@
-var Dota2Bot = require("./libs/bot");
-/*
+// var Dota2Bot = require("./libs/bot");
 
+/*
 Wrapper Funcs
 
     Dota2Bot.getMMR
@@ -20,3 +20,6 @@ Emmited Events
     Dota2Bot.dota2.emit("onMatchEnd");
 
 */
+
+'use strict';
+exports.Dota2Bot = require("./lib/bot");
