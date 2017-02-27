@@ -1,27 +1,26 @@
 var util = require("util");
-var Dota2Bot = require('.').Dota2Bot;
+
+var Dota2Bot = require(".");
+/*
+Wrapper Funcs
+    Dota2Bot.getMMR
+    Dota2Bot.getStats
+    Dota2Bot.winRate
+    Dota2Bot.startLobby
+Emmited Events
+    Dota2Bot.dota2.emit("botReady");
+    Dota2Bot.dota2.emit("lobbyCreated");
+    Dota2Bot.dota2.emit("lobbyNotCreated");
+        for X reasons, bot could complete the creation of  a lobby
+    Dota2Bot.dota2.emit("lobbyLaunched");
+    Dota2Bot.dota2.emit("lobbyCanceled");
+        lobby was created but bot didnt launch for X reasons
+    Dota2Bot.dota2.emit("onMatchStart");
+    Dota2Bot.dota2.emit("onMatchEnd");
+*/
 
 Dota2Bot.steamClient.connect();
 
-Dota2Bot.dota2.on("ready", function() {
-
-    Dota2Bot.dota2.flipLobbyTeams(function() {});
-    setTimeout(function(){
-        if (Dota2Bot.dota2.Lobby){
-            Dota2Bot.dota2.joinChat("Lobby_" + Dota2Bot.dota2.Lobby.lobby_id, 3);
-            setTimeout(function(){
-                Dota2Bot.dota2.leaveChat("Lobby_" + Dota2Bot.dota2.Lobby.lobby_id, 3);
-                Dota2Bot.dota2.leavePracticeLobby(function(err, data){
-                    util.log(JSON.stringify(data));
-                });
-                Dota2Bot.dota2.emit("botReady");
-            },2000);
-        } else {
-            Dota2Bot.dota2.emit("botReady");
-        }
-    }, 2000);
-
-});
 
 Dota2Bot.dota2.on("botReady", function() {
     util.log("&&&&&&Node-dota2 ready. Bot id: "+Dota2Bot.steamClient.steamID);
@@ -36,6 +35,7 @@ Dota2Bot.dota2.on("botReady", function() {
         }
     });*/
 
+    //lobby options
     var properties = {
         game_name: "Genbby Lobby Game",
         pass_key: "123",
@@ -50,6 +50,8 @@ Dota2Bot.dota2.on("botReady", function() {
         dire_series_wins: 0,
         allchat: true
     }
+
+    //use STEAMID64 to send invitations
     var teams = {
         goodGuys: ["0","1","2","3","4"],
         badGuys: ["5","6","7","8","76561198103503560"]
@@ -117,22 +119,3 @@ Dota2Bot.dota2.on("lobbyCreated", function() {
 Dota2Bot.dota2.on("practiceLobbyUpdate", function() {
     util.log("------lobby update outside lobby created");
 });
-
-// README
-/*
-Wrapper Funcs
-    Dota2Bot.getMMR
-    Dota2Bot.getStats
-    Dota2Bot.winRate
-    Dota2Bot.startLobby
-Emmited Events
-    Dota2Bot.dota2.emit("botReady");
-    Dota2Bot.dota2.emit("lobbyCreated");
-    Dota2Bot.dota2.emit("lobbyNotCreated");
-        for X reasons, bot could complete the creation of  a lobby
-    Dota2Bot.dota2.emit("lobbyLaunched");
-    Dota2Bot.dota2.emit("lobbyCanceled");
-        lobby was created but bot didnt launch for X reasons
-    Dota2Bot.dota2.emit("onMatchStart");
-    Dota2Bot.dota2.emit("onMatchEnd");
-*/
