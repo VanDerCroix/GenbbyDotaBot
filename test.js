@@ -1,6 +1,6 @@
 var util = require("util");
 
-var Dota2Bot = require(".");
+var Dota2Bot = require(".").Dota2Bot;
 /*
 Wrapper Funcs
     Dota2Bot.getMMR
