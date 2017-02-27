@@ -22,4 +22,4 @@ Emmited Events
 */
 
 'use strict';
-exports.Dota2Bot = require("./lib/bot");
+exports.Dota2Bot = require("./libs/bot");
