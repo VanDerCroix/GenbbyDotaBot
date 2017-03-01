@@ -1,3 +1,3 @@
 'use strict';
 
-exports.Dota2Bot = require("./lib/bot");
+exports.BotClass = require("./lib/bot");
