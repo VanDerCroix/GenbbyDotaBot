@@ -7,7 +7,7 @@
     "merge": "^1.2.0",
     "protobufjs": "^5.0.0",
     "steam": "^1.2.0",
-    "dota2": "^4.1.0"
+    "dota2": "latest"
   },
   "readmeFilename": "README.md",
   "description": "",
