@@ -136,7 +136,7 @@ Dota2Bot.winRate = function(accountId, callback) {
         matches_requested: 20
     }
     var response = {
-        top_3_heroes: [],
+        top_5_heroes: [],
         wins: 0,
         matches: 0
     }
@@ -162,7 +162,7 @@ Dota2Bot.winRate = function(accountId, callback) {
             });
             heroes.sort(function(a,b) {return (a.games < b.games) ? 1 : ((b.games < a.games) ? -1 : 0);} );
 
-            response.top_heroes = heroes.slice(0, 3);
+            response.top_5_heroes = heroes.slice(0, 5);
             response.wins = heroes.reduce(function(a, b) { return a + b.wins; }, 0);
             response.matches = data.matches.length;
            
