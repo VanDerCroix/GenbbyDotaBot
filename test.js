@@ -2,7 +2,7 @@ var util = require("util");
 
 var botClass = require(".").BotClass;
 
-var bots = [
+/*var bots = [
 	
 	{
 		steam_name : "d2gb0001",
@@ -35,8 +35,16 @@ var bots = [
 		steam_pass : "passwordrandom123",
 		steam_guard_code : "steamGuardCodeIfApplicable"
 	}
+];*/
+var bots = [
+	
+	{
+		steam_name : "d2gb0001",
+		steam_user : "d2gb0001",
+		steam_pass : "passwordrandom123",
+		steam_guard_code : "steamGuardCodeIfApplicable"
+	},
 ];
-
 
 bots.forEach(function (credentials){
 	var bot = new botClass(credentials);
@@ -46,15 +54,26 @@ bots.forEach(function (credentials){
 		util.log("&&&&&&Node-dota2 ready. Bot id: "+bot.Dota2Bot.steamClient.steamID);
 
 		var accountId = "76561198103503560"; //115601790
-		// getMMR getStats winRate
-		/*
-		bot.Dota2Bot.getStats(bot.Dota2Bot.dota2.ToAccountID(accountId), function (err, res) {
+		// winRate
+		
+
+		//getStats
+		/*bot.Dota2Bot.getStats(bot.Dota2Bot.dota2.ToAccountID(accountId), function (err, res) {
+		    if (err) {
+		        throw err;
+		    } else {
+		        util.log(res);
+		    }
+		});*/
+
+		//getMedal
+		bot.Dota2Bot.getMedal(bot.Dota2Bot.dota2.ToAccountID(accountId), function (err, res) {
 		    if (err) {
 		        throw err;
 		    } else {
 		        util.log(res);
 		    }
 		});
-		*/
+
 	});
 });
